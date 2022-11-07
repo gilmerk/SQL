@@ -1,0 +1,24 @@
+--Create a bookstore database.
+CREATE TABLE inventory (id INTEGER PRIMARY KEY, title TEXT, author TEXT, price INTEGER, quantity INTEGER, section TEXT);
+
+INSERT INTO inventory VALUES (1, "Where the Crawdads Sing", "Delia Owens", 12.39, 3, "Fiction" );
+INSERT INTO inventory VALUES (2, "The Body Keeps the Score", "Besser van der Kolk", 19.39, 10, "Nonfiction");
+INSERT INTO inventory VALUES (3, "The Hotel Nantucket", "Elin Hilderbrand", 14.50, 19, "Fiction" );
+INSERT INTO inventory VALUES (4, "Battle for the American Mind", "Pete Hegseth with David Goodwin", 17.99, 19, "Nonfiction");
+INSERT INTO inventory VALUES (5, "Atomic Habits", "James Clear", 11.98, 6, "Nonfiction");
+INSERT INTO inventory VALUES (6, "Wonder", "R.J. Palacio", 10.99, 1, "Children's");
+INSERT INTO inventory VALUES (7, "The Wonderful Things You Will Be", "Emily Winfield Martin", 8.55, 1, "Children's");
+INSERT INTO inventory VALUES (8, "We'll Always Have Summer", "Jenny Han", 17.99, 18, "Children's");
+INSERT INTO inventory VALUES (9, "One of Us is Lying", "Karen M. McManus", 10.70, 1, "Young Adult");
+INSERT INTO inventory VALUES (10, "It Ends With Us", "Colleen Hoover", 11.99, 6, "Fiction");
+INSERT INTO inventory VALUES (11, "Rising Tiger", "Brad Thor", 14.49, 20, "Fiction");
+INSERT INTO inventory VALUES (12, "Finding Me", "Viola Davis", 18.53, 18, "Nonfiction");
+INSERT INTO inventory VALUES (13, "Braiding Sweetgrass", "Robin Wall Kimmerer", 14.22, 8, "Nonfiction");
+INSERT INTO inventory VALUES (14, "The Boy, The Mole, The Fox and The Horse", "Charlie Macksey", 10.35, 6, "Fiction");
+INSERT INTO inventory VALUES (15, "Refugee", "Alan Gratz", 9.74, 2, "Children's");
+
+--Display the database grouped by price.
+SELECT ID, title, author, price, quantity, section FROM inventory GROUP BY price;
+
+--How many books are in each section?
+SELECT section, SUM(quantity) FROM inventory GROUP BY section
