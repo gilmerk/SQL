@@ -1,0 +1,29 @@
+CREATE TABLE servants 
+    (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT, 
+    class TEXT,
+    rarity INTEGER,
+    attribute TEXT,
+    alignment1 TEXT,
+    alignment2 TEXT,
+    np_type TEXT,
+    np_card TEXT,
+    debut TEXT,
+    cv TEXT);
+
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Altria Pendragon", "Saber", 5, "Earth", "Lawful", "Good", "AoE", "Buster", "Fate/stay night", "Kawasumi Ayako");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Altria Pendragon (Alter)", "Saber", 4, "Human", "Lawful", "Evil", "AoE", "Buster", "Fate/stay night", "Kawasumi Ayako");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Altria Pendragon (Lily)", "Saber", 4, "Earth", "Lawful", "Good", "AoE", "Buster", "Fate/unlimited codes", "Kawasumi Ayako");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Nero Claudius", "Saber", 4, "Human", "Chaotic", "Good", "AoE", "Arts", "Fate/EXTRA", "Tange Sakura");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Siegfried", "Saber", 4, "Earth", "Chaotic", "Good", "AoE", "Buster", "Fate/Apocrypha", "Suwabe Junichi");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Altera", "Saber", 5, "Human", "Chaotic", "Good", "AoE", "Buster", "Fate/Grand Order", "Noto Mamiko");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Chevalier d'Eon", "Saber", 4, "Human", "Neutral", "Balanced", "Support", "Arts", "Fate/Grand Order", "Saito Chiwa");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Emiya", "Archer", 4, "Human", "Neutral", "Balanced", "AoE", "Buster", "Fate/stay night", "Suwabe Junichi");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Gilgamesh", "Archer", 5, "Heaven", "Chaotic", "Good", "AoE", "Buster", "Fate/stay night", "Seki Tomokazu");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Atalante", "Archer", 4, "Earth", "Neutral", "Evil", "AoE", "Quick", "Fate/Apocrypha", "Kususaga Rin");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Elisabeth Bathory", "Lancer", 4, "Human", "Chaotic", "Evil", "AoE", "Buster", "Fate/EXTRA CCC", "Ookubo Rumi");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Marie Antoinette", "Rider", 4, "Human", "Lawful", "Good", "AoE", "Quick", "Fate/Grand Order", "Taneda Risa");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Saint Martha", "Rider", 4, "Human", "Lawful", "Good", "AoE", "Buster", "Fate/Grand Order", "Hayami Saori");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Zhuge Liang (El-Melloi II)", "Caster", 5, "Human", "Neutral", "Good", "Support", "Arts", "Fate/Zero", "Namikawa Daisuke");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Stheno", "Assassin", 4, "Heaven", "Chaotic", "Good", "Support", "Buster", "Fate/hollow ataraxia", "Asakawa Yuu");
+INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Carmilla", "Assassin", 4, "Earth", "Chaotic", "Evil", "ST", "Buster", "Fate/Grand Order", "Tanaka Atsuko");
