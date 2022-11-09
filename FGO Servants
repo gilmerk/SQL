@@ -1,3 +1,5 @@
+--Create a table with basic facts about each Servant.
+
 CREATE TABLE servants 
     (id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT, 
@@ -27,3 +29,48 @@ INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np
 INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Zhuge Liang (El-Melloi II)", "Caster", 5, "Human", "Neutral", "Good", "Support", "Arts", "Fate/Zero", "Namikawa Daisuke");
 INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Stheno", "Assassin", 4, "Heaven", "Chaotic", "Good", "Support", "Buster", "Fate/hollow ataraxia", "Asakawa Yuu");
 INSERT INTO servants (name, class, rarity, attribute, alignment1, alignment2, np_type, np_card, debut, cv) VALUES ("Carmilla", "Assassin", 4, "Earth", "Chaotic", "Evil", "ST", "Buster", "Fate/Grand Order", "Tanaka Atsuko");
+
+
+--Create a table of materials needed to fully ascend Saber-class servants.
+
+CREATE TABLE saber_ascension_materials
+    (id INTEGER PRIMARY KEY,
+    servant_id INTEGER,
+    saber_piece INTEGER,
+    saber_monument INTEGER,
+    dragon_fang INTEGER,
+    proof_of_hero INTEGER,
+    voids_dust INTEGER,
+    eternal_gear INTEGER,
+    ghost_lantern INTEGER,
+    meteor_horseshoe INTEGER,
+    octuplet_crystals INTEGER,
+    phoenix_feather INTEGER,
+    seed_of_yggdrasil INTEGER,
+    serpent_jewel INTEGER,
+    claw_of_chaos INTEGER,
+    dragons_reverse_scale INTEGER,
+    heart_of_the_foreign_god INTEGER,
+    QP INTEGER);
+
+INSERT INTO saber_ascension_materials (servant_id, saber_piece, saber_monument, dragon_fang, proof_of_hero, phoenix_feather, dragons_reverse_scale, QP) VALUES (2, 17, 17, 18, 29, 12, 5, 4400000);
+INSERT INTO saber_ascension_materials (servant_id, saber_piece, saber_monument, dragon_fang, claw_of_chaos, dragons_reverse_scale, heart_of_the_foreign_god, QP) VALUES (3, 14, 14, 15, 5, 6, 4, 2200000);
+INSERT INTO saber_ascension_materials (servant_id, saber_piece, saber_monument, dragon_fang, proof_of_hero, seed_of_yggdrasil, dragons_reverse_scale, QP) VALUES (4, 14, 14, 20, 18, 15, 4, 2200000);
+INSERT INTO saber_ascension_materials (servant_id, saber_piece, saber_monument, eternal_gear, ghost_lantern, octuplet_crystals, phoenix_feather, QP) VALUES (5, 14, 14, 10, 12, 6, 7, 2200000);
+INSERT INTO saber_ascension_materials (servant_id, saber_piece, saber_monument, dragon_fang, proof_of_hero, seed_of_yggdrasil, dragons_reverse_scale, QP) VALUES (6, 14, 14, 15, 36, 10, 5, 2200000);
+INSERT INTO saber_ascension_materials (servant_id, saber_piece, saber_monument, voids_dust, meteor_horseshoe, claw_of_chaos, heart_of_the_foreign_god, QP) VALUES (7, 17, 17, 15, 15, 6, 5, 4400000);
+
+
+--Create a table showing which class is strong against which.
+
+CREATE TABLE affinity
+    (id INTEGER PRIMARY KEY,
+    class1 TEXT,
+    class2 TEXT);
+    
+INSERT INTO affinity (class1, class2) VALUES ("Saber", "Lancer");
+INSERT INTO affinity (class1, class2) VALUES ("Archer", "Saber");
+INSERT INTO affinity (class1, class2) VALUES ("Lancer", "Archer");
+INSERT INTO affinity (class1, class2) VALUES ("Rider", "Caster");
+INSERT INTO affinity (class1, class2) VALUES ("Caster", "Assassin");
+INSERT INTO affinity (class1, class2) VALUES ("Assassin", "Rider");
