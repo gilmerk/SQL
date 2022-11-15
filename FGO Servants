@@ -74,3 +74,17 @@ INSERT INTO affinity (class1, class2) VALUES ("Lancer", "Archer");
 INSERT INTO affinity (class1, class2) VALUES ("Rider", "Caster");
 INSERT INTO affinity (class1, class2) VALUES ("Caster", "Assassin");
 INSERT INTO affinity (class1, class2) VALUES ("Assassin", "Rider");
+
+--Show how many ascension materials are need for each Saber servant.
+
+SELECT servants.name, saber_ascension_materials.saber_piece, saber_ascension_materials.saber_monument, saber_ascension_materials.dragon_fang, saber_ascension_materials.proof_of_hero, saber_ascension_materials.voids_dust, saber_ascension_materials.eternal_gear, saber_ascension_materials.ghost_lantern, saber_ascension_materials.meteor_horseshoe, saber_ascension_materials.octuplet_crystals, saber_ascension_materials.phoenix_feather, saber_ascension_materials.seed_of_yggdrasil, saber_ascension_materials.serpent_jewel, saber_ascension_materials.claw_of_chaos, saber_ascension_materials.dragons_reverse_scale, saber_ascension_materials.heart_of_the_foreign_god, saber_ascension_materials.qp FROM servants
+    JOIN saber_ascension_materials
+    ON saber_ascension_materials.servant_id = servants.id;
+    
+--Based on class affinity, show which servants are strong are which.
+    
+SELECT a.name AS "servant1", a.class, b.name AS "servant2", b.class FROM affinity
+    JOIN servants a
+    ON affinity.class1 = a.class
+    JOIN servants b
+    ON affinity.class2 = b.class;
