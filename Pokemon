@@ -1,3 +1,5 @@
+--Create the database.
+
 CREATE TABLE pokemon(
   Number     INTEGER,
   Name       TEXT PRIMARY KEY,
@@ -814,14 +816,30 @@ INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_
 INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_Def,Speed,Generation,Legendary) VALUES (720,'HoopaHoopa Unbound','Psychic','Dark',680,80,160,60,170,130,80,6,'True');
 INSERT INTO pokemon(Number,Name,Type_1,Type_2,Total,HP,Attack,Defense,Sp_Atk,Sp_Def,Speed,Generation,Legendary) VALUES (721,'Volcanion','Fire','Water',600,80,110,120,130,90,70,6,'True');
 
+
+--What is the average attack value?
+
 SELECT AVG(Attack) FROM pokemon;
+
+
+--Which Pokemon has the greatest attack value and what is it?
 
 SELECT Name, MAX(Attack) FROM pokemon;
 
+
+--Which Pokemon has the lowest attack value and what is it?
+
 SELECT Name, MIN(Attack) FROM pokemon;
 
-SELECT Type_1, ROUND(AVG(Attack)) AS Avg_Atk FROM pokemon         GROUP BY Type_1
+
+--We know from previous queries that the average Pokemon has an attack value of 79. Which types of Pokemon are stronger on average (looking only at primary types)?
+
+SELECT Type_1, ROUND(AVG(Attack)) AS Avg_Atk FROM pokemon         
+    GROUP BY Type_1
     HAVING Avg_Atk > 79;
+
+
+--List each Pokemon, its attack value, and whether that value is above average, below average, or average. We will define the average attack value range as being between 71 and 87.
 
 SELECT Name, Attack,
     CASE
@@ -831,6 +849,12 @@ SELECT Name, Attack,
     END as "Atk_Stregnth"
 FROM pokemon;
 
+
+--List the Gen 6 Pokemon with greater-than-average attack values.
+
 SELECT Name FROM pokemon WHERE Attack > 79 AND Generation = 6;
+
+
+--List all Pokemon with Psychic as their primary or secondary type.
 
 SELECT Name, Type_1, Type_2 FROM pokemon WHERE Type_1 = "Psychic" OR Type_2 = "Psychic"; 
