@@ -75,11 +75,13 @@ INSERT INTO affinity (class1, class2) VALUES ("Rider", "Caster");
 INSERT INTO affinity (class1, class2) VALUES ("Caster", "Assassin");
 INSERT INTO affinity (class1, class2) VALUES ("Assassin", "Rider");
 
+
 --Show how many ascension materials are need for each Saber servant.
 
-SELECT servants.name, saber_ascension_materials.saber_piece, saber_ascension_materials.saber_monument, saber_ascension_materials.dragon_fang, saber_ascension_materials.proof_of_hero, saber_ascension_materials.voids_dust, saber_ascension_materials.eternal_gear, saber_ascension_materials.ghost_lantern, saber_ascension_materials.meteor_horseshoe, saber_ascension_materials.octuplet_crystals, saber_ascension_materials.phoenix_feather, saber_ascension_materials.seed_of_yggdrasil, saber_ascension_materials.serpent_jewel, saber_ascension_materials.claw_of_chaos, saber_ascension_materials.dragons_reverse_scale, saber_ascension_materials.heart_of_the_foreign_god, saber_ascension_materials.qp FROM servants
-    JOIN saber_ascension_materials
-    ON saber_ascension_materials.servant_id = servants.id;
+SELECT s.name, m.saber_piece, m.saber_monument, m.dragon_fang, m.proof_of_hero, m.voids_dust, m.eternal_gear, m.ghost_lantern, m.meteor_horseshoe, m.octuplet_crystals, m.phoenix_feather, m.seed_of_yggdrasil, m.serpent_jewel, m.claw_of_chaos, m.dragons_reverse_scale, m.heart_of_the_foreign_god, m.qp FROM servants as s
+    JOIN saber_ascension_materials as m
+    ON m.servant_id = s.id;
+    
     
 --Based on class affinity, show which servants are strong are which.
     
